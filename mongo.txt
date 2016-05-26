@@ -36,8 +36,8 @@ db.orders.find({
 db.orders.find( { $and: [ { "lineItems.quantity": { $gt: 5 } },  { "lineItems.quantity": { $lt: 50 } } ] } )
 //8 Update one of your line items to 42.99. HINT: Look at dot notation
 db.orders.update(
-  { "_id" : ObjectId("5747516c829cee980ce969e8")},
-   { $set: { unitPrice: 42.99} }
+  {"_id" : ObjectId("5747516c829cee980ce969e9")},
+   { $set: { "lineItems.0.unitPrice": 42.99} }
 )
 //9 Remove one of your orders.
 db.orders.remove(
